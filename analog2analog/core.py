@@ -16,6 +16,7 @@ class Analog2Analog:
         for i in range(len(self.signal_x)):
             self.carrier_y[i] *= self.signal_y[i]
         
+        plt.title("amplitude modulation")
         plt.subplot(1, 3, 2)
         plt.plot(self.signal_x, self.signal_y)
         plt.subplot(1, 3, 3)
@@ -32,6 +33,7 @@ class Analog2Analog:
         phi = 2*np.pi*fc*t + k*np.cumsum(sig)
         sig_mod = np.sin(phi) 
 
+        plt.title("frequency modulation")
         plt.plot(t, sig_mod)
         plt.plot(t, sig, c='r')
 
@@ -47,6 +49,7 @@ class Analog2Analog:
         phi = 2*np.pi*fc*t + k*sig
         sig_mod = np.sin(phi) 
 
+        plt.title("phase modulation")
         plt.plot(t, sig_mod)
         plt.plot(t, sig, c='r')
 
